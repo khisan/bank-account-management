@@ -1,14 +1,16 @@
 package com.bank.model;
 public class Transaction {
     private String transactionId;
-    private String accountNumber;
+    private String source;
+    private String destination;
     private double amount;
     private String transactionType; // "deposit" or "withdrawal"
     private String date;
 
-    public Transaction(String transactionId, String accountNumber, double amount, String transactionType, String date) {
+    public Transaction(String transactionId, String source, String destination, double amount, String transactionType, String date) {
         this.transactionId = transactionId;
-        this.accountNumber = accountNumber;
+        this.source = source;
+        this.destination = destination;
         this.amount = amount;
         this.transactionType = transactionType;
         this.date = date;
@@ -18,8 +20,12 @@ public class Transaction {
         return transactionId;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getSource() {
+      return source;
+    }
+    
+    public String getDestination() {
+      return destination;
     }
 
     public double getAmount() {
@@ -42,8 +48,12 @@ public class Transaction {
       this.transactionId = transactionId;
     }
     
-    public void setAccountNumber(String accountNumber) {
-      this.accountNumber = accountNumber;
+    public void setDestination(String destination) {
+      this.destination = destination;
+    }
+
+    public void setSource(String source) {
+      this.source = source;
     }
 
     public void setAmount(double amount) {
