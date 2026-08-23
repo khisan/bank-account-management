@@ -31,6 +31,26 @@ public class Transaction {
     }
 
     public String getDate() {
-        return date;
+      return date;
+    }
+    
+    public void setDate(String date) {
+      this.date = date;
+    }
+
+    public void setTransactionId(String transactionId) {
+      this.transactionId = transactionId;
+    }
+    
+    public void setAccountNumber(String accountNumber) {
+      this.accountNumber = accountNumber;
+    }
+
+    public void setAmount(double amount) {
+      this.amount = amount;
+    }
+
+    public void setTransactionType(String transactionType) {
+      this.transactionType = transactionType;
     }
 }
