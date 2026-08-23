@@ -1,5 +1,7 @@
 package com.bank.model;
+
 public class Transaction {
+
     private String transactionId;
     private String source;
     private String destination;
@@ -7,7 +9,14 @@ public class Transaction {
     private String transactionType; // "deposit" or "withdrawal"
     private String date;
 
-    public Transaction(String transactionId, String source, String destination, double amount, String transactionType, String date) {
+    public Transaction(
+        String transactionId,
+        String source,
+        String destination,
+        double amount,
+        String transactionType,
+        String date
+    ) {
         this.transactionId = transactionId;
         this.source = source;
         this.destination = destination;
@@ -16,16 +25,33 @@ public class Transaction {
         this.date = date;
     }
 
+    public void setTransactionHistory(Transaction transaction) {
+        System.out.println(
+            "Transaction recorded: " +
+                transaction.getTransactionId() +
+                ", Source: " +
+                transaction.getSource() +
+                ", Destination: " +
+                transaction.getDestination() +
+                ", Amount: " +
+                transaction.getAmount() +
+                ", Type: " +
+                transaction.getTransactionType() +
+                ", Date: " +
+                transaction.getDate()
+        );
+    }
+
     public String getTransactionId() {
         return transactionId;
     }
 
     public String getSource() {
-      return source;
+        return source;
     }
-    
+
     public String getDestination() {
-      return destination;
+        return destination;
     }
 
     public double getAmount() {
@@ -37,30 +63,6 @@ public class Transaction {
     }
 
     public String getDate() {
-      return date;
-    }
-    
-    public void setDate(String date) {
-      this.date = date;
-    }
-
-    public void setTransactionId(String transactionId) {
-      this.transactionId = transactionId;
-    }
-    
-    public void setDestination(String destination) {
-      this.destination = destination;
-    }
-
-    public void setSource(String source) {
-      this.source = source;
-    }
-
-    public void setAmount(double amount) {
-      this.amount = amount;
-    }
-
-    public void setTransactionType(String transactionType) {
-      this.transactionType = transactionType;
+        return date;
     }
 }

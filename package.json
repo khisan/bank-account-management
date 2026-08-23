@@ -1,0 +1,24 @@
+{
+  "name": "bank-account-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khisan/bank-account-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khisan/bank-account-management/issues"
+  },
+  "homepage": "https://github.com/khisan/bank-account-management#readme",
+  "devDependencies": {
+    "prettier": "3.9.6",
+    "prettier-plugin-java": "2.10.3"
+  }
+}
