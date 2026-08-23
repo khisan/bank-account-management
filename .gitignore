@@ -1,0 +1,13 @@
+# Ignore a specific folder (like node modules or build artifacts)
+node_modules/
+dist/
+
+# Ignore a specific file
+.env
+
+# Ignore all files with a specific extension (e.g., logs)
+*.log
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
