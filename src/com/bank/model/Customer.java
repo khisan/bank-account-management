@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Customer {
 
-    private String Id;
+    private String id;
     private String name;
     private String email;
     private String address;
@@ -12,7 +12,7 @@ public class Customer {
     private List<Account> accounts;
 
     public Customer(String id, String name, String email, String address, String phoneNumber, List<Account> accounts) {
-        this.Id = id;
+        this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
@@ -21,7 +21,7 @@ public class Customer {
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public String getName() {

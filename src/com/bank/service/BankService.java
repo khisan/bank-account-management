@@ -1,6 +1,7 @@
 package com.bank.service;
 
 import com.bank.model.*;
+import java.util.List;
 
 public class BankService {
 
@@ -26,5 +27,19 @@ public class BankService {
 
     public void gettransactionHistory(Transaction transaction) {
         transaction.gettransactionHistory(transaction);
+    }
+
+    public void createcustomer(
+        String id,
+        String name,
+        String email,
+        String address,
+        String phoneNumber,
+        List<Account> accounts
+    ) {
+        Customer customer = new Customer(id, name, email, address, phoneNumber, accounts);
+        System.out.println(
+            "Customer created: " + customer.getName() + ", " + customer.getAddress() + ", " + customer.getPhoneNumber()
+        );
     }
 }
