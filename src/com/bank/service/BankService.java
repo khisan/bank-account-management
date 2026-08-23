@@ -23,4 +23,8 @@ public class BankService {
             System.out.println("Transfer gagal. Saldo tidak mencukupi.");
         }
     }
+
+    public void gettransactionHistory(Transaction transaction) {
+        transaction.gettransactionHistory(transaction);
+    }
 }

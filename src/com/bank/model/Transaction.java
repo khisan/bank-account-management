@@ -42,6 +42,23 @@ public class Transaction {
         );
     }
 
+    public void gettransactionHistory(Transaction transaction) {
+        System.out.println(
+            "Transaction history: " +
+                transaction.getTransactionId() +
+                ", Source: " +
+                transaction.getSource() +
+                ", Destination: " +
+                transaction.getDestination() +
+                ", Amount: " +
+                transaction.getAmount() +
+                ", Type: " +
+                transaction.getTransactionType() +
+                ", Date: " +
+                transaction.getDate()
+        );
+    }
+
     public String getTransactionId() {
         return transactionId;
     }
