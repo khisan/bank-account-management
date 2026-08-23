@@ -1,14 +1,16 @@
 package com.bank.main;
 
 import java.util.Scanner;
+import com.bank.model.Account;
+import com.bank.model.CheckingAccount;
 
 public class Main {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Pilih Menu:");
-      System.out.println("1. Transfer");
-      System.out.println("2. Cek Saldo");
-      System.out.println("3. Deposit");
+      System.out.println("1. Cek Saldo");
+      System.out.println("2. Deposit");
+      System.out.println("3. Tarik Tunai");
       System.out.println("4. Transfer");
       System.out.println("5. Keluar");
 
