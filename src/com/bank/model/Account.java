@@ -1,5 +1,7 @@
 package com.bank.model;
+
 public class Account {
+
     private String accountNumber;
     private double balance;
     private String owner;
@@ -15,9 +17,9 @@ public class Account {
     }
 
     public String getOwner() {
-      return owner;
+        return owner;
     }
-    
+
     public String getAccountNumber() {
         return accountNumber;
     }

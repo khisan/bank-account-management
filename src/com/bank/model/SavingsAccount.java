@@ -1,26 +1,21 @@
 package com.bank.model;
-public class SavingsAccount extends Account { 
-  private double overdraftLimit;
 
-  public SavingsAccount(String accountNumber, double balance, String owner) {
-    super(accountNumber, balance, owner);
-    this.overdraftLimit = 0; // Set a default overdraft limit
-  }
-  
-  public double getOverdraftLimit() {
-    return overdraftLimit;
-  }
+public class SavingsAccount extends Account {
 
-  public void setOverdraftLimit(double overdraftLimit) {
-    this.overdraftLimit = overdraftLimit;
-  }
+    private double interestRate;
 
-  @Override
-  public void withdraw(double amount) {
-    if (amount <= getBalance() + overdraftLimit) {
-      super.withdraw(amount);
-    } else {
-      System.out.println("Penarikan gagal. Melebihi batas overdraft.");
+    public SavingsAccount(String accountNumber, double balance, String owner, double interestRate) {
+        super(accountNumber, balance, owner);
+        this.interestRate = interestRate;
     }
-  }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public void applyInterest() {
+        double interest = getBalance() * interestRate;
+        deposit(interest);
+        System.out.println("Bunga sebesar " + interest + " telah diterapkan. Saldo saat ini: " + getBalance());
+    }
 }

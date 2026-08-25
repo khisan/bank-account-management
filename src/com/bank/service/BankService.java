@@ -1,15 +1,17 @@
 package com.bank.service;
 
 import com.bank.model.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BankService {
 
+    private List<Account> accounts = new ArrayList<>();
+
     public void transfer(Account source, Account destination, double amount) {
-        if (source.getBalance() >= amount) {
+        try {
             source.withdraw(amount);
             destination.deposit(amount);
-            System.out.println("Transfer berhasil. Saldo saat ini: " + source.getBalance());
             String transactionId = "TXN" + System.currentTimeMillis();
             Transaction transaction = new Transaction(
                 transactionId,
@@ -17,19 +19,28 @@ public class BankService {
                 destination.getAccountNumber(),
                 amount,
                 "transfer",
-                new java.util.Date().toString()
+                java.time.LocalDateTime.now().toString()
             );
             transaction.setTransactionHistory(transaction);
-        } else {
-            System.out.println("Transfer gagal. Saldo tidak mencukupi.");
+            System.out.println(
+                "Transfer berhasil dari " +
+                    source.getAccountNumber() +
+                    " ke " +
+                    destination.getAccountNumber() +
+                    " sebesar " +
+                    amount
+            );
+            System.out.println("Saldo sumber: " + source.getBalance() + ", Saldo tujuan: " + destination.getBalance());
+        } catch (IllegalStateException e) {
+            System.out.println("Transfer gagal: " + e.getMessage());
         }
     }
 
-    public void gettransactionHistory(Transaction transaction) {
-        transaction.gettransactionHistory(transaction);
+    public void getTransactionHistory(Transaction transaction) {
+        transaction.getTransactionHistory(transaction);
     }
 
-    public void createcustomer(
+    public Customer createCustomer(
         String id,
         String name,
         String email,
@@ -41,5 +52,45 @@ public class BankService {
         System.out.println(
             "Customer created: " + customer.getName() + ", " + customer.getAddress() + ", " + customer.getPhoneNumber()
         );
+        return customer;
+    }
+
+    public Account createAccount(
+        Enum<AccountType.Type> accountType,
+        double balance,
+        String owner,
+        double interestRate
+    ) {
+        Account account;
+        if (accountType == AccountType.Type.CHECKING) {
+            String accountNumber = "CHK" + System.currentTimeMillis();
+            account = new CheckingAccount(accountNumber, balance, owner);
+            System.out.println("Checking account created: " + accountNumber + ", Owner: " + owner);
+        } else if (accountType == AccountType.Type.SAVINGS) {
+            String accountNumber = "SAV" + System.currentTimeMillis();
+            account = new SavingsAccount(accountNumber, balance, owner, interestRate);
+            System.out.println(
+                "Savings account created: " + accountNumber + ", Owner: " + owner + ", Interest Rate: " + interestRate
+            );
+        } else {
+            throw new IllegalArgumentException("Invalid account type: " + accountType);
+        }
+        accounts.add(account);
+        System.out.println("Akun berhasil dibuat: " + account.getAccountNumber() + ", Pemilik: " + account.getOwner());
+        return account;
+    }
+
+    public List<Account> getAllAccounts() {
+        for (Account account : accounts) {
+            System.out.println(
+                "Nomor Akun: " +
+                    account.getAccountNumber() +
+                    ", Saldo: " +
+                    account.getBalance() +
+                    ", Pemilik: " +
+                    account.getOwner()
+            );
+        }
+        return accounts;
     }
 }

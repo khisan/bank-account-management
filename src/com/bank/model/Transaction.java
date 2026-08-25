@@ -42,7 +42,7 @@ public class Transaction {
         );
     }
 
-    public void gettransactionHistory(Transaction transaction) {
+    public void getTransactionHistory(Transaction transaction) {
         System.out.println(
             "Transaction history: " +
                 transaction.getTransactionId() +
