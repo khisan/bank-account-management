@@ -65,8 +65,17 @@ public class Main {
                     bankService.getAllAccounts();
                     break;
                 case 3:
-                    // Withdraw
-                    // Implementasi withdraw
+                    Scanner depositScanner = new Scanner(System.in);
+                    System.out.print("Masukkan nomor akun untuk deposit: ");
+                    String depositAccountNumber = depositScanner.nextLine();
+                    Account depositAccount = bankService.getAccountByAccountNumber(depositAccountNumber);
+                    if (depositAccount != null) {
+                        System.out.print("Masukkan jumlah deposit: ");
+                        double depositAmount = depositScanner.nextDouble();
+                        depositAccount.deposit(depositAmount);
+                    } else {
+                        System.out.println("Akun tidak ditemukan.");
+                    }
                     break;
                 case 4:
                     // Transfer

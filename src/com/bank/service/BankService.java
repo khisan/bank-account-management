@@ -93,4 +93,13 @@ public class BankService {
         }
         return accounts;
     }
+
+    public Account getAccountByAccountNumber(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
+    }
 }
