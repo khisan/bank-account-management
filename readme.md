@@ -1,83 +1,86 @@
 ````markdown
-# 🏦 Bank Account Management System (Java CLI)
+# 🏦 Bank Account Management System
 
-A simple, object-oriented Java command-line application for managing bank accounts, customers, and financial transactions. This project demonstrates core Object-Oriented Programming (OOP) concepts such as **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
+A simple, robust, and object-oriented Java command-line application for managing bank accounts, customers, and financial transactions. This project demonstrates core Object-Oriented Programming (OOP) concepts including **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
 
 ---
 
 ## 🛠️ Features
 
-- **Account Management**: Create regular, savings (with interest), and checking accounts (with overdraft limit).
-- **Account Listing**: View all registered accounts within the system.
-- **Transactions**: Deposit, withdraw, and transfer funds between accounts safely.
-- **Exception Handling**: Protects against invalid inputs, insufficient balances, and missing account records.
-- **Enum Support**: Type-safe account classification using Java `enum`.
+- **Multiple Account Types**: Support for Regular Accounts, Savings Accounts (with interest rate calculations), and Checking Accounts (with overdraft limits).
+- **Account Listing**: View all registered bank accounts with real-time balance status.
+- **Safe Transactions**: Perform deposits, withdrawals, and inter-account transfers.
+- **Type-Safe Design**: Utilizes Java `Enum` for reliable account classification.
+- **Error Handling**: Custom exception handling for low balance and invalid operations.
 
 ---
 
 ## 📁 Project Structure
 
-- **bank-account-management/**
-    - **src/**
-        - **com/bank/**
-            - **enums/**
-                - `AccountType.java`
-            - **exception/**
-                - `InsufficientBalanceException.java`
-            - **model/**
-                - `Account.java`
-                - `CheckingAccount.java`
-                - `Customer.java`
-                - `SavingsAccount.java`
-                - `Transaction.java`
-            - **service/**
-                - `BankService.java`
-            - `Main.java`
-
-## ⚙️ Requirements
-
-- **Java Development Kit (JDK)**: Version 17 or higher recommended.
-- **IDE/Text Editor**: VS Code, IntelliJ IDEA, Eclipse, or Command Line Interface (CLI).
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone or Open the Repository
-
-Navigate to your working directory:
-
-```bash
-git clone [https://github.com/khisan/bank-account-management.git](https://github.com/your-username/bank-account-management.git)
-cd bank-account-management
+```text
+bank-account-management/
+└── src/
+    └── com/
+        └── bank/
+            ├── enums/
+            │   └── AccountType.java
+            ├── exception/
+            │   └── InsufficientBalanceException.java
+            ├── model/
+            │   ├── Account.java
+            │   ├── CheckingAccount.java
+            │   ├── Customer.java
+            │   ├── SavingsAccount.java
+            │   └── Transaction.java
+            ├── service/
+            │   └── BankService.java
+            └── Main.java
 ```
 ````
 
-````
+---
 
-### 2. Compile and Run via Terminal
+## ⚙️ Prerequisites
 
-Make sure you are in the **`src`** directory before compiling to prevent package path errors:
+- **Java Development Kit (JDK)**: Version 17 or higher recommended.
+- **IDE / Text Editor**: VS Code, IntelliJ IDEA, or Terminal.
+
+---
+
+## 🚀 Getting Started & Execution
+
+### 1. Open Project Directory
+
+Open your terminal and navigate to the root directory of the project:
+
+```bash
+cd bank-account-management
+
+```
+
+### 2. Compile and Run via CLI
+
+> ⚠️ **Important**: Always compile from inside the `src` directory to maintain correct package declarations (`com.bank.*`).
 
 ```bash
 # Navigate to the source folder
 cd src
 
-# Compile all Java files
-javac com/bank/Main.java com/bank/model/*.java com/bank/service/*.java com/bank/enums/*.java
+# Compile all Java source files
+javac com/bank/Main.java com/bank/model/*.java com/bank/service/*.java com/bank/enums/*.java com/bank/exception/*.java
 
-# Run the application
+# Run the Main class
 java com.bank.Main
 
 ```
 
 ---
 
-## 💻 How to Use
+## 💡 How It Works (CLI Navigation)
 
-When you run the application, you will interact with an interactive terminal menu:
+Upon launching the application, you will be presented with an interactive menu:
 
-```
+```text
 === Menu Bank ===
 1. Create New Account (Savings / Checking / Regular)
 2. List All Accounts
@@ -88,22 +91,25 @@ When you run the application, you will interact with an interactive terminal men
 
 ```
 
-1. Select **Option 1** to create an account. The system will automatically generate a unique Account Number (e.g., `ACC171000000`).
-2. Use **Option 2** to view generated account details.
-3. Use the Account Number to perform **Deposit**, **Withdrawal**, or **Transfer** operations.
+1. **Create Account**: Generates a unique Account Number (e.g., `ACC171000000`) based on timestamps.
+2. **List Accounts**: Displays all created accounts along with current balance and account types.
+3. **Transactions**: Input the specific Account Number to process deposits, withdrawals, or money transfers.
 
 ---
 
 ## 🔑 Core OOP Concepts Applied
 
-- **Encapsulation**: Encapsulating account balances and fields using `private` modifiers and offering access via getter/setter methods.
-- **Inheritance**: `CheckingAccount` and `SavingsAccount` inherit shared properties and behavior from the base `Account` class.
-- **Polymorphism**: Overriding the `withdraw()` method to handle custom overdraft logic in checking accounts vs. standard limits in savings accounts.
-- **Abstractions & Service Layer**: Separating business operations (`BankService`) from UI presentation logic (`Main.java`).
+- **Encapsulation**: State fields (`balance`, `accountNumber`) are kept `private` and accessed exclusively through methods/getters/setters.
+- **Inheritance**: `SavingsAccount` and `CheckingAccount` extend the base `Account` class to share common attributes.
+- **Polymorphism**: Customized behaviors for `withdraw()` logic depending on whether the target is a Checking Account (overdraft allowed) or Savings Account.
+- **Layered Architecture**: Decoupling the User Interface (`Main.java`) from the Core Logic (`BankService.java`).
 
 ---
 
 ## 📝 License
 
 This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
-````
+
+```
+
+```
