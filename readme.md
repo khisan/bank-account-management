@@ -1,4 +1,4 @@
-`````markdown
+````markdown
 # 🏦 Bank Account Management System (Java CLI)
 
 A simple, object-oriented Java command-line application for managing bank accounts, customers, and financial transactions. This project demonstrates core Object-Oriented Programming (OOP) concepts such as **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
@@ -17,30 +17,27 @@ A simple, object-oriented Java command-line application for managing bank accoun
 
 ## 📁 Project Structure
 
-````text
-bank-account-management/
-├── src/
-│   └── com/
-│       └── bank/
-│           ├── enums/
-│           │   └── AccountType.java
-│           ├── exception/
-│           │   └── InsufficientBalanceException.java
-│           ├── model/
-│           │   ├── Account.java
-│           │   ├── CheckingAccount.java
-│           │   ├── Customer.java
-│           │   ├── SavingsAccount.java
-│           │   └── Transaction.java
-│           ├── service/
-│           │   └── BankService.java
-│           └── Main.java
-
+- **bank-account-management/**
+    - **src/**
+        - **com/bank/**
+            - **enums/**
+                - `AccountType.java`
+            - **exception/**
+                - `InsufficientBalanceException.java`
+            - **model/**
+                - `Account.java`
+                - `CheckingAccount.java`
+                - `Customer.java`
+                - `SavingsAccount.java`
+                - `Transaction.java`
+            - **service/**
+                - `BankService.java`
+            - `Main.java`
 
 ## ⚙️ Requirements
 
-* **Java Development Kit (JDK)**: Version 17 or higher recommended.
-* **IDE/Text Editor**: VS Code, IntelliJ IDEA, Eclipse, or Command Line Interface (CLI).
+- **Java Development Kit (JDK)**: Version 17 or higher recommended.
+- **IDE/Text Editor**: VS Code, IntelliJ IDEA, Eclipse, or Command Line Interface (CLI).
 
 ---
 
@@ -53,8 +50,8 @@ Navigate to your working directory:
 ```bash
 git clone [https://github.com/khisan/bank-account-management.git](https://github.com/your-username/bank-account-management.git)
 cd bank-account-management
+```
 ````
-`````
 
 ````
 
