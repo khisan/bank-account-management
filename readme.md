@@ -1,4 +1,4 @@
-```markdown
+`````markdown
 # 🏦 Bank Account Management System (Java CLI)
 
 A simple, object-oriented Java command-line application for managing bank accounts, customers, and financial transactions. This project demonstrates core Object-Oriented Programming (OOP) concepts such as **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
@@ -16,27 +16,26 @@ A simple, object-oriented Java command-line application for managing bank accoun
 ---
 
 ## 📁 Project Structure
-```
 
+````text
 bank-account-management/
-└── src/
-└── com/
-└── bank/
-├── enums/
-│ └── AccountType.java
-├── model/
-│ ├── Account.java
-│ ├── CheckingAccount.java
-│ ├── Customer.java
-│ ├── SavingsAccount.java
-│ └── Transaction.java
-├── service/
-│ └── BankService.java
-└── Main.java
+├── src/
+│   └── com/
+│       └── bank/
+│           ├── enums/
+│           │   └── AccountType.java
+│           ├── exception/
+│           │   └── InsufficientBalanceException.java
+│           ├── model/
+│           │   ├── Account.java
+│           │   ├── CheckingAccount.java
+│           │   ├── Customer.java
+│           │   ├── SavingsAccount.java
+│           │   └── Transaction.java
+│           ├── service/
+│           │   └── BankService.java
+│           └── Main.java
 
-````
-
----
 
 ## ⚙️ Requirements
 
@@ -54,6 +53,8 @@ Navigate to your working directory:
 ```bash
 git clone [https://github.com/khisan/bank-account-management.git](https://github.com/your-username/bank-account-management.git)
 cd bank-account-management
+````
+`````
 
 ````
 
@@ -108,3 +109,4 @@ When you run the application, you will interact with an interactive terminal men
 ## 📝 License
 
 This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+````
