@@ -78,8 +78,17 @@ public class Main {
                     }
                     break;
                 case 4:
-                    // Transfer
-                    // Implementasi transfer
+                    Scanner withdrawScanner = new Scanner(System.in);
+                    System.out.print("Masukkan nomor akun untuk tarik tunai: ");
+                    String withdrawAccountNumber = withdrawScanner.nextLine();
+                    Account withdrawAccount = bankService.getAccountByAccountNumber(withdrawAccountNumber);
+                    if (withdrawAccount != null) {
+                        System.out.print("Masukkan jumlah tarik tunai: ");
+                        double withdrawAmount = withdrawScanner.nextDouble();
+                        withdrawAccount.withdraw(withdrawAmount);
+                    } else {
+                        System.out.println("Akun tidak ditemukan.");
+                    }
                     break;
                 case 5:
                     System.out.println("Terima kasih telah menggunakan layanan kami.");
