@@ -21,8 +21,7 @@ public class Main {
             System.out.println("3. Deposit");
             System.out.println("4. Tarik Tunai");
             System.out.println("5. Transfer");
-            System.out.println("6. List Akun");
-            System.out.println("7. Keluar");
+            System.out.println("6. Keluar");
             System.out.print("Pilih opsi: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -91,6 +90,22 @@ public class Main {
                     }
                     break;
                 case 5:
+                    Scanner transferScanner = new Scanner(System.in);
+                    System.out.print("Masukkan nomor akun pengirim: ");
+                    String fromAccountNumber = transferScanner.nextLine();
+                    System.out.print("Masukkan nomor akun penerima: ");
+                    String toAccountNumber = transferScanner.nextLine();
+                    Account fromAccount = bankService.getAccountByAccountNumber(fromAccountNumber);
+                    Account toAccount = bankService.getAccountByAccountNumber(toAccountNumber);
+                    if (fromAccount != null && toAccount != null) {
+                        System.out.print("Masukkan jumlah transfer: ");
+                        double transferAmount = transferScanner.nextDouble();
+                        bankService.transfer(fromAccount, toAccount, transferAmount);
+                    } else {
+                        System.out.println("Salah satu akun tidak ditemukan.");
+                    }
+                    break;
+                case 6:
                     System.out.println("Terima kasih telah menggunakan layanan kami.");
                     running = false;
                     break;
